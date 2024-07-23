@@ -4,7 +4,7 @@ The system utilizes the HuggingFace LLaMA3-8B-Struct pre-trained model, optimize
 
 ## Transformers
 
-This repository consists of methods to run Transformers in PyTorch and ONNX with operators dispatch to NPU.
+This repository consists of methods to run Transformers in PyTorch and ONNX with operators dispatch to NPU
 
 ## Setup Transformers
 
