@@ -2,6 +2,24 @@
 
 This project aims to develop a high-performance, low-power conference note-taking system using the AMD Ryzen AI processor and Ryzen AI software platform. The system utilizes the HuggingFace LLaMA3-8B-Struct pre-trained model, optimized with w4abf16 quantization algorithm and AWQ+PerGrp methods, and is ultimately deployed on AMD Ryzen AI-powered PC devices. This provides users with fast and accurate conference note generation services. The project leverages the hardware acceleration capabilities of the Ryzen AI processor and the intelligent load optimization of the Ryzen AI software to ensure excellent performance under low power conditions.
 
+## Cover Image (TBD)
+
+## Bill of Materials
+
+The following is a list of components for creating the Ryzen AI Conference Notes system:
+
+### Hardware:
+
+1. AMD Ryzen 9 5900X Processor x 1
+2. 32GB DDR4 3200MHz Memory x 2
+3. 1TB M.2 NVMe SSD x 1
+4. Radeon RX 6800 XT Graphics Card x 1
+5. 750W 80+ Gold Power Supply x 1
+6. ATX Case x 1
+7. CPU Cooler x 1
+
+
+
 ## Transformers
 
 This repository consists of methods to run Transformers in PyTorch and ONNX with operators dispatch to NPU
