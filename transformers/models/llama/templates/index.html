@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ryzen-AI-Powered-Conference-Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #333333;
+        }
+        select, input[type="file"], textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .response-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .response {
+            background-color: #f9f9f9;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            padding: 20px;
+            white-space: pre-wrap;
+            color: #333333;
+            width: 48%;
+            box-sizing: border-box;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        @media (max-width: 768px) {
+            .meeting-content, .response {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ryzen-AI-Powered-Conference-Notes</h1>
+        <form method="post" enctype="multipart/form-data">
+            <label for="language">Select Language:</label>
+            <select id="language" name="language">
+                <option value="zh">Chinese</option>
+                <option value="en">English</option>
+            </select>
+            <label for="meeting_file">Upload Conference Notes File:</label>
+            <input type="file" id="meeting_file" name="meeting_file">
+            <label for="meeting_content">Or Enter Conference Content:</label>
+            <textarea id="meeting_content" name="meeting_content" rows="5" placeholder="Enter conference content"></textarea>
+            <button type="submit">Analyze</button>
+        </form>
+        {% if response %}
+        <div class="response-container">
+            <div class="response">{{ response }}</div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
