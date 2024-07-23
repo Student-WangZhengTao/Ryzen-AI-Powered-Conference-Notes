@@ -46,6 +46,8 @@ With this complete hardware and software setup, we can fully exploit the perform
 
 ## Complete Description (BOM)
 
+### Schematics
+
 First, we install and configure the Ryzen AI software platform on a PC equipped with an AMD Ryzen AI processor. The Ryzen AI software provides a set of libraries and tools optimized for the Ryzen AI processor, helping us to fully leverage the hardware's performance potential.
 
 Next, we prepare the pre-trained LLaMA3-8B-Struct model. We use the open-source model provided by HuggingFace as the foundation, then fine-tune and optimize it for the conference recording application. To further enhance deployment efficiency and performance, we use the w4abf16 quantization algorithm and advanced quantization techniques like AWQ+PerGrp to compress and accelerate the model.
@@ -55,10 +57,6 @@ After optimizing the model, we use the ONNX runtime provided by the Ryzen AI sof
 Finally, we design a user-friendly conference notes generation application that integrates the optimized LLaMA model. Users can start the application during a conference and submit the meeting data, and the system will automatically generate high-quality meeting notes, significantly improving work efficiency.
 
 By fully leveraging the powerful capabilities of the AMD Ryzen AI processor and the Ryzen AI software platform, our "Ryzen AI-Powered Conference Notes" system can provide users with fast, accurate, and low-power conference recording services, offering a new experience for enterprise office work and collaboration.
-
-## Images and Related Resource Files (Schematics, Code, CAD)
-
-
 
 ## Transformers
 
