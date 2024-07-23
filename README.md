@@ -6,6 +6,9 @@ This project aims to develop a high-performance, low-power conference note-takin
 
 ## Cover Image (TBD)
 
+![image](https://github.com/user-attachments/assets/65531f6d-f987-479f-99ad-c77e1cb49ef3)
+
+
 ## Bill of Materials
 
 The following is a list of components for creating the Ryzen AI Conference Notes system:
