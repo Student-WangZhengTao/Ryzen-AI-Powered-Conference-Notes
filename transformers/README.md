@@ -9,12 +9,9 @@ This repository consists of methods to run Transformers in PyTorch and ONNX with
 Open Anaconda prompt on Windows PC.
 
 ```
-git clone https://github.com/amd/RyzenAI-SW.git
-cd RyzenAI-SW\example\transformers
 conda env create --file=env.yaml
 conda activate ryzenai-transformers
 
-cd RyzenAI-SW\example\transformers\
 setup.bat
 ```
 
@@ -22,7 +19,6 @@ AWQ Model zoo has precomputed scales, clips and zeros for various LLMs including
 
 ```
 git lfs install
-cd RyzenAI-SW\example\transformers\ext
 git clone https://huggingface.co/datasets/mit-han-lab/awq-model-zoo awq_cache
 ```
 
