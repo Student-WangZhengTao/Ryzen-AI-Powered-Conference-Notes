@@ -17,13 +17,11 @@ The following is a list of components for creating the Ryzen AI Conference Notes
 
 ### Hardware:
 
-1. AMD Ryzen 9 5900X Processor x 1
-2. 32GB DDR4 3200MHz Memory x 2
-3. 1TB M.2 NVMe SSD x 1
-4. Radeon RX 6800 XT Graphics Card x 1
-5. 750W 80+ Gold Power Supply x 1
-6. ATX Case x 1
-7. CPU Cooler x 1
+1. UM790 Pro
+2. CPU AMD Ryzen 9 7940HS Processor
+3. GPU AMD Radeon 780M
+4. System Memory 16GB x 2
+5. Storage 512GB
 
 ### Software:
 
