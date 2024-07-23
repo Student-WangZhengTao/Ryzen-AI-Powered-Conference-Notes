@@ -1,8 +1,7 @@
 # Ryzen-AI-Powered-Conference-Notes
 
+![download](https://github.com/user-attachments/assets/58dcf8f0-6a1b-49a1-8c5e-0e66a6fafe81)
 This project aims to develop a high-performance, low-power conference note-taking system using the AMD Ryzen AI processor and Ryzen AI software platform. The system utilizes the HuggingFace LLaMA3-8B-Struct pre-trained model, optimized with w4abf16 quantization algorithm and AWQ+PerGrp methods, and is ultimately deployed on AMD Ryzen AI-powered PC devices. This provides users with fast and accurate conference note generation services. The project leverages the hardware acceleration capabilities of the Ryzen AI processor and the intelligent load optimization of the Ryzen AI software to ensure excellent performance under low power conditions.
-![image](https://github.com/user-attachments/assets/224a4aac-e226-4bea-adea-329a2bd0bd3a)
-
 
 ## Cover Image (TBD)
 
