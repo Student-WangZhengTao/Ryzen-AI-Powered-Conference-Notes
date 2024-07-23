@@ -17,6 +17,8 @@ The following is a list of components for creating the Ryzen AI Conference Notes
 
 ### Hardware:
 
+![5d16a3c5119d9a42e44e61d3c35306d](https://github.com/user-attachments/assets/3b094298-1c52-4009-87f8-41be783c4a18)
+
 1. UM790 Pro
 2. CPU AMD Ryzen 9 7940HS Processor
 3. GPU AMD Radeon 780M
