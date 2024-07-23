@@ -48,8 +48,9 @@ With this complete hardware and software setup, we can fully exploit the perform
 
 ### Schematics
 
-![image](https://github.com/user-attachments/assets/e6c610c7-9d7e-4624-9281-305d1cf45e20)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e6c610c7-9d7e-4624-9281-305d1cf45e20" alt="Schematics">
+</p>
 
 First, we install and configure the Ryzen AI software platform on a PC equipped with an AMD Ryzen AI processor. The Ryzen AI software provides a set of libraries and tools optimized for the Ryzen AI processor, helping us to fully leverage the hardware's performance potential.
 
