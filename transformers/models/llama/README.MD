@@ -1,4 +1,8 @@
-# Llama 2 - Pytorch
+# Llama 3
+
+<p align="center">
+  <img src="https://github.com/Student-WangZhengTao/Ryzen-AI-Powered-Conference-Notes/blob/main/llama.jpg" alt="Llama 3">
+</p>
 
 **_NOTE:_**  Please ensure that you followed the environment setup instructions from the [Transformer folder readme](../../README.md) before following the steps here.
 
