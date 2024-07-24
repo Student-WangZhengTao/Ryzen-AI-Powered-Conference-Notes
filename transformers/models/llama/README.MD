@@ -1,29 +1,18 @@
-# Llama 3
+# Llama
 
 <p align="center">
-  <img src="https://github.com/Student-WangZhengTao/Ryzen-AI-Powered-Conference-Notes/blob/main/llama.jpg" alt="Llama 3">
+  <img src="https://github.com/Student-WangZhengTao/Ryzen-AI-Powered-Conference-Notes/blob/main/llama.jpg" alt="Llama">
 </p>
 
 **_NOTE:_**  Please ensure that you followed the environment setup instructions from the [Transformer folder readme](../../README.md) before following the steps here.
 
-Llama 2 model was proposed by Meta, [Llama 2: Open Foundation and Fine-Tuned Chat Models](https://ai.meta.com/research/publications/llama-2-open-foundation-and-fine-tuned-chat-models/).
-
-
 ### Features
-1. w4a16: AWQ on CPU, AIE **(AWQ for Llama2 his from MIT-Han-lab)**
+1. w4a16: AWQ on CPU, AIE **(AWQ for Llama3 his from MIT-Han-lab)**
 4. Static memory allocation for token phase speed up
 5. Matmul grouping for Llama2Attn
 6. Model save and load from checkpoints
 7. Profiling instrumentation to measure prefill/token times during mission mode
 
-### Model Variants
-Ryzen-AI supports Llama2-7B up to a sequence length of 4096 tokens. 
-
-### Model Structure 
-
-#### llama-2-7b , llama-2-7b-chat 
-This image shows model structure - both have same structure
-![Model Structure](./llama-2-7b-model.png)
 
 
 ### Support modes on NPU
