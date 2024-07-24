@@ -7,9 +7,9 @@
 **_NOTE:_**  Please ensure that you followed the environment setup instructions from the [Transformer folder readme](../../README.md) before following the steps here.
 
 ### Features
-1. w4a16: AWQ on CPU, AIE **(AWQ for Llama3 his from MIT-Han-lab)**
+1. w4a16: AWQ on CPU, AIE **(AWQ for Llama 3 his from MIT-Han-lab)**
 4. Static memory allocation for token phase speed up
-5. Matmul grouping for Llama2Attn
+5. Matmul grouping for Llama3Attn
 6. Model save and load from checkpoints
 7. Profiling instrumentation to measure prefill/token times during mission mode
 
@@ -20,9 +20,9 @@
 Currently the supported precision on NPU is "w4abf16" and "w4abf16 + FA". **w4abf16** uses **AWQ** PerGrp quantization
 
 
-### Prepare Llama2 Weights to use with HF
+### Prepare Llama3 Weights to use with HF
 
-The weights of Llama-2 models can be obtained by requesting permission with Meta. Check this [Huggingface page](https://huggingface.co/docs/transformers/main/model_doc/llama2) on Llama-2 for details. 
+The weights of Llama-3 models can be obtained by requesting permission with Meta. Check this [Huggingface page](https://huggingface.co/docs/transformers/main/model_doc/llama3) on Llama-3 for details. 
 
 Once weights are obtained, use Huggingface's converter to convert the weights to be compatible to be loaded with HF interface. 
 
