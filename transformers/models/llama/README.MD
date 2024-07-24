@@ -18,47 +18,17 @@ The weights of Llama-3 models can be obtained by requesting permission with Meta
 
 Once weights are obtained, use Huggingface's converter to convert the weights to be compatible to be loaded with HF interface. 
 
+```
+
+# Run the converter
+$ python <condainstall>/envs/ryzenai-transformers/lib/python3.9/site-packages/transformers/models/llama/convert_llama_weights_to_hf.py --input_dir ./llama-3-wts/ --model_size 8B --output_dir ./llama-3-wts-hf/8B
+
+```
+
 <p align="center">
   <img src="https://github.com/Student-WangZhengTao/Ryzen-AI-Powered-Conference-Notes/blob/main/transformers/models/llama/update.png" alt="Llama">
 </p>
-```
-# Directory structure of llama-2 weights
-$ls -ltrh llama-2-wts
-total 536K
--rw-r--r-- 1 user user 489K Jul 13 15:27 tokenizer.model
--rw-r--r-- 1 user user   50 Jul 13 15:27 tokenizer_checklist.chk
--rw-r--r-- 1 user user 6.9K Jul 14 17:06 LICENSE
--rw-r--r-- 1 user user 4.7K Jul 14 17:06 USE_POLICY.md
-drwxr-sr-x 2 user user 4.0K Aug 31 11:12 llama-2-7b
-drwxr-sr-x 2 user user 4.0K Aug 31 11:15 llama-2-13b
-drwxr-sr-x 2 user user 4.0K Aug 31 11:17 llama-2-70b
-drwxr-sr-x 2 user user 4.0K Aug 31 11:17 llama-2-7b-chat
-drwxr-sr-x 2 user user 4.0K Aug 31 11:17 llama-2-13b-chat
-drwxr-sr-x 2 user user 4.0K Aug 31 11:17 llama-2-70b-chat
 
-# rename llama-2-7b as 7B
-
-$ ls -ltrh llama-2-wts
-total 500K
-drwxr-sr-x 2 user user 4.0K Sep 28 12:44 7B
--rw-r--r-- 1 user user   50 Sep 28 12:45 tokenizer_checklist.chk
--rw-r--r-- 1 user user 489K Sep 28 12:45 tokenizer.model
-
-# Run the converter
-$ python <condainstall>/envs/ryzenai-transformers/lib/python3.9/site-packages/transformers/models/llama/convert_llama_weights_to_hf.py --input_dir ./llama-2-wts/ --model_size 7B --output_dir ./llama-2-wts-hf/7B
-
-# you want to convert llama-2-7b-chat, rename the llama-2-7b-chat to 7B and rerun the converter again as follows
-
-$ python <condainstall>/envs/ryzenai-transformers/lib/python3.9/site-packages/transformers/models/llama/convert_llama_weights_to_hf.py --input_dir ./llama-2-wts/ --model_size 7B --output_dir ./llama-2-wts-hf/7B_chat
-```
-
-Go to the llama2 folder
-
-```
-cd models/llama2/
-```
-
-Ensure the folder `llama-2-wts-hf` at the current location containing subfolders `7B` and `7B_chat`
 
 ## Quantization
 
