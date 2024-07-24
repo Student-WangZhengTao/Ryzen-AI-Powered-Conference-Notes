@@ -34,7 +34,7 @@ $ python <condainstall>/envs/ryzenai-transformers/lib/python3.9/site-packages/tr
 
 ### w4abf16 with AWQ + PerGrp Quantization
 
-AWQ enables 3-bit and 4-bit weights for LLMs. This reduces model size of Llama2 7B from 52-58% of int8 model depending on group size and whether the last layer is quantized. 
+AWQ enables 3-bit and 4-bit weights for LLMs. This reduces model size of Llama3 8B from 52-58% of int8 model depending on group size and whether the last layer is quantized. 
 
 AWQ scales are obtained from MIT-Han-Lab. THe script also contains hooks to calculate scales instead of using precomputed scales. All layers other than "lm_head" are quantized using AWQ. This software stack of RyzenAI can also quantize lm_head layer using per group quantization scheme, with group sizes varying from 32-256. 
 
