@@ -66,6 +66,10 @@ By fully leveraging the powerful capabilities of the AMD Ryzen AI processor and 
     
 To run the demos and examples in this repository, please follow the instructions of README.md in each directory. 
 
+- [Environment Configuration](transformers)
+
+- [Run LLM Llama 3 model with PyTorch on Ryzen AI](transformers/models/llama)
+
 ## Reference
 
 - [Ryzen™ AI Developer Guide](https://ryzenai.docs.amd.com/en/latest)
