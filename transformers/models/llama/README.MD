@@ -1,4 +1,4 @@
-# Llama
+# Llama - 3 - 8b - pytorch
 
 <p align="center">
   <img src="https://github.com/Student-WangZhengTao/Ryzen-AI-Powered-Conference-Notes/blob/main/transformers/models/llama/llama.jpg" alt="Llama">
