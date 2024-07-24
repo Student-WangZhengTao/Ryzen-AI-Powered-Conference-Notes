@@ -12,10 +12,15 @@
 
 The weights of Llama-3 models can be obtained by requesting permission with Meta. Check this [Huggingface page](https://huggingface.co/docs/transformers/main/model_doc/llama3) on Llama-3 for details. 
 
-
+<p align="center">
+  <img src="https://github.com/Student-WangZhengTao/Ryzen-AI-Powered-Conference-Notes/blob/main/transformers/models/llama/original.jpg" alt="Llama">
+</p>
 
 Once weights are obtained, use Huggingface's converter to convert the weights to be compatible to be loaded with HF interface. 
 
+<p align="center">
+  <img src="https://github.com/Student-WangZhengTao/Ryzen-AI-Powered-Conference-Notes/blob/main/transformers/models/llama/update.jpg" alt="Llama">
+</p>
 ```
 # Directory structure of llama-2 weights
 $ls -ltrh llama-2-wts
