@@ -44,4 +44,4 @@ python installer.py
 
 ## Running Model
 
-- [Run LLM Llama 3 model ](transformers/models/llama)
+- [Run LLM Llama 3 model ](models/llama)
