@@ -6,18 +6,6 @@
 
 **_NOTE:_**  Please ensure that you followed the environment setup instructions from the [Transformer folder readme](../../README.md) before following the steps here.
 
-### Features
-1. w4a16: AWQ on CPU, AIE **(AWQ for Llama 3 his from MIT-Han-lab)**
-4. Static memory allocation for token phase speed up
-5. Matmul grouping for Llama3Attn
-6. Model save and load from checkpoints
-7. Profiling instrumentation to measure prefill/token times during mission mode
-
-
-
-### Support modes on NPU
-
-Currently the supported precision on NPU is "w4abf16" and "w4abf16 + FA". **w4abf16** uses **AWQ** PerGrp quantization
 
 
 ### Prepare Llama3 Weights to use with HF
@@ -86,32 +74,9 @@ This in addition to static memory allocation in token phases provides 8-10% bett
 
 ##### 4-bit AWQ
 ```
-AWQ - lm_head runs in BF16 
-python run_awq.py --w_bit 4 --task quantize 
-
-AWQ - lm_head runs in BF16 
-python run_awq.py --w_bit 4 --task quantize --flash_attention
-
-AWQ + Quantize lm_head 
-python run_awq.py --w_bit 4 --task quantize --lm_head
 
 AWQ + Quantize lm_head
 python run_awq.py --w_bit 4 --task quantize --lm_head --flash_attention
-```
-
-##### 3-bit AWQ
-```
-AWQ - lm_head runs in BF16 
-python run_awq.py --w_bit 3 --task quantize 
-
-AWQ - lm_head runs in BF16 
-python run_awq.py --w_bit 3 --task quantize --flash_attention
-
-AWQ + Quantize lm_head 
-python run_awq.py --w_bit 3 --task quantize --lm_head
-
-AWQ + Quantize lm_head
-python run_awq.py --w_bit 3 --task quantize --lm_head --flash_attention
 ```
 
 
@@ -138,35 +103,20 @@ The only thing I can think of is that I don't know how to make you disappear
 
 #### Latency : Ryzen9 7945HS
 ```
-python run_awq.py --target aie --task benchmark --flash_attention --w_bit 4
-...
+python web_demo.py
 
-python run_awq.py --target aie --task benchmark_long --flash_attention --w_bit 4
-...
-
-python run_awq.py --target aie --task benchmark --flash_attention --w_bit 4 --lm_head
-...
-
-python run_awq.py --target aie --task benchmark_long --flash_attention --w_bit 4 --lm_head
-...
-
-python run_awq.py --target aie --task benchmark --flash_attention --w_bit 3
 ```
 
-#### Perplexity scores
-Perplexity is measured using negative log likelihood scores.
-***Perplexity ios measured on wikitext2-raw dataset***
-***Perplexity measurement takes several hours on both CPU and NPU***
-***Lower value is better***
 
-On RyzenAI, it takes ~5mins to calculate perplexity on 2 samples with seqlen of 2048. To calculate it on entire testset (84) samples with sequence length of 4096, it takes ~7 hrs.
+### Features
+1. w4a16: AWQ on CPU, AIE **(AWQ for Llama 3 his from MIT-Han-lab)**
+4. Static memory allocation for token phase speed up
+5. Matmul grouping for Llama3Attn
+6. Model save and load from checkpoints
+7. Profiling instrumentation to measure prefill/token times during mission mode
 
-| **Precision+Config**                                     | **Device** | **2 samples/seq=2048** | **All(84) samples/seq=4096**
-|----------------------------------------------------------|------------|------------------------|------------------------------
-FP32                                                       | CPU        |  5.092                 |
-**BF16**                                                   | **V100**   |  **6.718**             | **6.859**
-FP32 + SmoothQuant                                         | CPU        |  5.092                 |
-FP32 + Flash Attention v2                                  | CPU        |  5.092                 |
-w4abf16 (AWQ, 3-bit, group size: 128)                      | CPU        |  7.807                 |
-w4abf16 (AWQ, 3-bit, group size: 128)                      | **NPU**    |  **7.809**             | 
-w4abf16 (AWQ, 4-bit, group size: 128)                      | **NPU**    |  **6.925**             | 
+
+
+### Support modes on NPU
+
+Currently the supported precision on NPU is "w4abf16" and "w4abf16 + FA". **w4abf16** uses **AWQ** PerGrp quantization
