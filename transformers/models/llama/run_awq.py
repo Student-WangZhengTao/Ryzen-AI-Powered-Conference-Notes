@@ -33,14 +33,14 @@ set_seed(123)
 
 
 def load_model(args):
-    tokenizer = LlamaTokenizer.from_pretrained("./llama-2-wts-hf/7B_chat")
+    tokenizer = LlamaTokenizer.from_pretrained("./llama-3-wts-hf/8B_chat")
     if args.awq == "none":
-        model = LlamaForCausalLM.from_pretrained("./llama-2-wts-hf/7B_chat", torch_dtype=torch.bfloat16) 
+        model = LlamaForCausalLM.from_pretrained("./llama-3-wts-hf/8B_chat", torch_dtype=torch.bfloat16) 
     
     else:
-        ckpt = "pytorch_llama27b_w_bit_{}_awq{}_{}amd.pt".format(args.w_bit, "_fa" if args.flash_attention else "", "lm_" if args.lm_head else "")
+        ckpt = "pytorch_llama3_8b_w_bit_{}_awq{}_{}amd.pt".format(args.w_bit, "_fa" if args.flash_attention else "", "lm_" if args.lm_head else "")
         if args.task == "quantize":
-            model = LlamaForCausalLM.from_pretrained("./llama-2-wts-hf/7B_chat", torch_dtype=torch.bfloat16)
+            model = LlamaForCausalLM.from_pretrained("./llama-3-wts-hf/8B_chat", torch_dtype=torch.bfloat16)
             print(model)
             
             Utils.print_model_size(model)
@@ -51,7 +51,7 @@ def load_model(args):
 
             if args.awq == 'load':
                 print("Loading pre-computed AWQ results from", os.getenv("AWQ_CACHE"))
-                awq_results = torch.load(os.getenv("AWQ_CACHE")  + "/llama-2-7b-chat-w%d-g128.pt"%args.w_bit, map_location="cpu")
+                awq_results = torch.load(os.getenv("AWQ_CACHE")  + "/llama-3-8b-chat-w%d-g128.pt"%args.w_bit, map_location="cpu")
                 apply_awq(model, awq_results)
                 print("Quantization config:", q_config)
                 real_quantize_model_weight(
@@ -70,9 +70,9 @@ def load_model(args):
                         w_bit=args.w_bit, q_config=q_config,
                         n_samples=128, seqlen=512,
                     )
-                torch.save(awq_results, "./llama-2-7b-chat-w%d-g128-generated.pt"%args.w_bit)
+                torch.save(awq_results, "./llama-3-8b-chat-w%d-g128-generated.pt"%args.w_bit)
                 print(model)
-                print("Saved AWQ results in ./llama-2-7b-chat-w%d-g128-generated.pt"%args.w_bit)
+                print("Saved AWQ results in ./llama-3-8b-chat-w%d-g128-generated.pt"%args.w_bit)
                 raise SystemExit
             
             if args.flash_attention:
@@ -80,7 +80,7 @@ def load_model(args):
                 node_args = ()
                 node_kwargs = {
                     'config': model.config,
-                    'llama_name': "llama-2-wts-hf/7B_chat",
+                    'llama_name': "llama-3-wts-hf/8B_chat",
                     'flash_config_path': "../../ops/python/llama_flash_attention_config.json",
                     'device': "cpu", # args.target
                     'max_new_tokens': 11,
@@ -144,10 +144,10 @@ if __name__ == "__main__":
         p.cpu_affinity([0, 1, 2, 3])
     torch.set_num_threads(args.num_torch_threads)
     
-    log_dir = "./logs_awq_7B_chat"
+    log_dir = "./logs_awq_8B_chat"
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
-    log_file = log_dir + "/log_awq_7B_chat.log"
+    log_file = log_dir + "/log_awq_8B_chat.log"
 
     logging.basicConfig(filename=log_file,
                         filemode='w',
