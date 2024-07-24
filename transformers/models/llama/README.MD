@@ -39,24 +39,20 @@ AWQ enables 3-bit and 4-bit weights for LLMs. This reduces model size of Llama2 
 AWQ scales are obtained from MIT-Han-Lab. THe script also contains hooks to calculate scales instead of using precomputed scales. All layers other than "lm_head" are quantized using AWQ. This software stack of RyzenAI can also quantize lm_head layer using per group quantization scheme, with group sizes varying from 32-256. 
 
 Linear layers are replaced with QLinearPerGrp custom int4 compute layer afetr AWQ.
-![AWQ pic](./awq_lmhead.png)
 
 Matmul grouping in done when flash attention is enabled, which reduces number of dispatches to AIE by grouping matmuls of QKV matrices into a single grouped matmul.
 This in addition to static memory allocation in token phases provides 8-10% better performance than vanilla attention.
 
-![AWQ FA](./awq_fa.png)
 
 #### Save AWQ checkpoints
 4-bit AWQ has higher perplexity than 3-bit AWQ with same performance.
 
 ##### 4-bit AWQ
-```
 
+```
 AWQ + Quantize lm_head
 python run_awq.py --w_bit 4 --task quantize --lm_head --flash_attention
 ```
-
-
 
 ## Deployment
 
@@ -81,7 +77,6 @@ The only thing I can think of is that I don't know how to make you disappear
 #### Latency : Ryzen9 7945HS
 ```
 python web_demo.py
-
 ```
 
 
