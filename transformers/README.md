@@ -41,3 +41,7 @@ pip install voe-0.1.0-cp39-cp39-win_amd64.whl
 pip install onnxruntime_vitisai-1.15.1-cp39-cp39-win_amd64.whl
 python installer.py
 ```
+
+## Running Model
+
+- [Run LLM Llama 3 model ](transformers/models/llama)
