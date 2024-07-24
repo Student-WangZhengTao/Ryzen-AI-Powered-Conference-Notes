@@ -62,5 +62,13 @@ Finally, we design a user-friendly conference notes generation application that 
 
 By fully leveraging the powerful capabilities of the AMD Ryzen AI processor and the Ryzen AI software platform, our "Ryzen AI-Powered Conference Notes" system can provide users with fast, accurate, and low-power conference recording services, offering a new experience for enterprise office work and collaboration.
 
+## Getting Started
+    
+To run the demos and examples in this repository, please follow the instructions of README.md in each directory. 
 
+## Reference
+
+- [Ryzen™ AI Developer Guide](https://ryzenai.docs.amd.com/en/latest)
+- [ONNXRuntime Vitis-AI EP](https://onnxruntime.ai/docs/execution-providers/Vitis-AI-ExecutionProvider.html)
+- [AMD AI Developer Forum](https://community.amd.com/t5/ai/ct-p/amd_ai)
 
