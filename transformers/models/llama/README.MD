@@ -54,41 +54,22 @@ AWQ + Quantize lm_head
 python run_awq.py --w_bit 4 --task quantize --lm_head --flash_attention
 ```
 
-## Deployment
+## Test
 
 ```
 python run_awq.py --task decode --target aie --w_bit 4
 
-****************************************
-prompt: What is the meaning of life?
-Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
-response: What is the meaning of life? This is a question that has puzzled philosophers, theologians, scientists, and many others for
-****************************************
-prompt: Tell me something you don't know.
-Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
-response: Tell me something you don't know.
-The only thing I can think of is that I don't know how to make you disappear
-****************************************
-*
+图片
+
 ```
 
-## Results
+## Operation
 
-#### Latency : Ryzen9 7945HS
 ```
 python web_demo.py
+
+图片
+
 ```
 
-
-### Features
-1. w4a16: AWQ on CPU, AIE **(AWQ for Llama 3 his from MIT-Han-lab)**
-4. Static memory allocation for token phase speed up
-5. Matmul grouping for Llama3Attn
-6. Model save and load from checkpoints
-7. Profiling instrumentation to measure prefill/token times during mission mode
-
-
-
-### Support modes on NPU
-
-Currently the supported precision on NPU is "w4abf16" and "w4abf16 + FA". **w4abf16** uses **AWQ** PerGrp quantization
+**_NOTE:_**  The supported precision on NPU is "w4abf16" and "w4abf16 + FA". **w4abf16** uses **AWQ** PerGrp quantization
