@@ -36,30 +36,33 @@ $ python <condainstall>/envs/ryzenai-transformers/lib/python3.9/site-packages/tr
 
 AWQ enables 3-bit and 4-bit weights for LLMs. This reduces model size of Llama3 8B from 52-58% of int8 model depending on group size and whether the last layer is quantized. 
 
-AWQ scales are obtained from MIT-Han-Lab. THe script also contains hooks to calculate scales instead of using precomputed scales. All layers other than "lm_head" are quantized using AWQ. This software stack of RyzenAI can also quantize lm_head layer using per group quantization scheme, with group sizes varying from 32-256. 
-
-Linear layers are replaced with QLinearPerGrp custom int4 compute layer afetr AWQ.
-
-Matmul grouping in done when flash attention is enabled, which reduces number of dispatches to AIE by grouping matmuls of QKV matrices into a single grouped matmul.
-This in addition to static memory allocation in token phases provides 8-10% better performance than vanilla attention.
-
-
-#### Save AWQ checkpoints
-4-bit AWQ has higher perplexity than 3-bit AWQ with same performance.
+<p align="center">
+  <img src="https://github.com/Student-WangZhengTao/Ryzen-AI-Powered-Conference-Notes/blob/main/transformers/models/llama/weight.png" alt="Llama">
+</p>
 
 ##### 4-bit AWQ
 
 ```
 AWQ + Quantize lm_head
 python run_awq.py --w_bit 4 --task quantize --lm_head --flash_attention
+
 ```
+
+#### Save AWQ checkpoints
+4-bit AWQ has higher perplexity than 3-bit AWQ with same performance.
+
+<p align="center">
+  <img src="https://github.com/Student-WangZhengTao/Ryzen-AI-Powered-Conference-Notes/blob/main/transformers/models/llama/quant_weight.png" alt="Llama">
+</p>
 
 ## Test
 
 ```
 python run_awq.py --task decode --target aie --w_bit 4
 
-图片
+<p align="center">
+  <img src="https://github.com/Student-WangZhengTao/Ryzen-AI-Powered-Conference-Notes/blob/main/transformers/models/llama/test.png" alt="Llama">
+</p>
 
 ```
 
@@ -68,8 +71,16 @@ python run_awq.py --task decode --target aie --w_bit 4
 ```
 python web_demo.py
 
-图片
+<p align="center">
+  <img src="https://github.com/Student-WangZhengTao/Ryzen-AI-Powered-Conference-Notes/blob/main/transformers/models/llama/Result.png" alt="Llama">
+</p>
 
 ```
+
+## Result
+
+<p align="center">
+  <img src="https://github.com/Student-WangZhengTao/Ryzen-AI-Powered-Conference-Notes/blob/main/transformers/models/llama/test.png" alt="Llama">
+</p>
 
 **_NOTE:_**  The supported precision on NPU is "w4abf16" and "w4abf16 + FA". **w4abf16** uses **AWQ** PerGrp quantization
