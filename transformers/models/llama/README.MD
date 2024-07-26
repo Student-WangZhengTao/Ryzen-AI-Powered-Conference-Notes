@@ -76,7 +76,7 @@ python web_demo.py
 ## Result
 
 <p align="center">
-  <img src="https://github.com/Student-WangZhengTao/Ryzen-AI-Powered-Conference-Notes/blob/main/transformers/models/llama/test.png" alt="Llama">
+  <img src="https://github.com/Student-WangZhengTao/Ryzen-AI-Powered-Conference-Notes/blob/main/transformers/models/llama/System.png" alt="Llama">
 </p>
 
 **_NOTE:_**  The supported precision on NPU is "w4abf16" and "w4abf16 + FA". **w4abf16** uses **AWQ** PerGrp quantization
