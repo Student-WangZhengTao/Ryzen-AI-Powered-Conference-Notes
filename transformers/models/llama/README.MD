@@ -19,16 +19,14 @@ The weights of Llama-3 models can be obtained by requesting permission with Meta
 Once weights are obtained, use Huggingface's converter to convert the weights to be compatible to be loaded with HF interface. 
 
 ```
-
 # Run the converter
-$ python <condainstall>/envs/ryzenai-transformers/lib/python3.9/site-packages/transformers/models/llama/convert_llama_weights_to_hf.py --input_dir ./llama-3-wts/ --model_size 8B --output_dir ./llama-3-wts-hf/8B
 
+$ python <condainstall>/envs/ryzenai-transformers/lib/python3.9/site-packages/transformers/models/llama/convert_llama_weights_to_hf.py --input_dir ./llama-3-wts/ --model_size 8B --output_dir ./llama-3-wts-hf/8B
 ```
 
 <p align="center">
   <img src="https://github.com/Student-WangZhengTao/Ryzen-AI-Powered-Conference-Notes/blob/main/transformers/models/llama/update.png" alt="Llama">
 </p>
-
 
 ## Quantization
 
@@ -43,12 +41,13 @@ AWQ enables 3-bit and 4-bit weights for LLMs. This reduces model size of Llama3 
 ##### 4-bit AWQ
 
 ```
-AWQ + Quantize lm_head
-python run_awq.py --w_bit 4 --task quantize --lm_head --flash_attention
+# AWQ + Quantize lm_head
 
+$ python run_awq.py --w_bit 4 --task quantize --lm_head --flash_attention
 ```
 
 #### Save AWQ checkpoints
+
 4-bit AWQ has higher perplexity than 3-bit AWQ with same performance.
 
 <p align="center">
@@ -59,23 +58,20 @@ python run_awq.py --w_bit 4 --task quantize --lm_head --flash_attention
 
 ```
 python run_awq.py --task decode --target aie --w_bit 4
-
+```
 <p align="center">
   <img src="https://github.com/Student-WangZhengTao/Ryzen-AI-Powered-Conference-Notes/blob/main/transformers/models/llama/test.png" alt="Llama">
 </p>
-
-```
 
 ## Operation
 
 ```
 python web_demo.py
+```
 
 <p align="center">
   <img src="https://github.com/Student-WangZhengTao/Ryzen-AI-Powered-Conference-Notes/blob/main/transformers/models/llama/Result.png" alt="Llama">
 </p>
-
-```
 
 ## Result
 
